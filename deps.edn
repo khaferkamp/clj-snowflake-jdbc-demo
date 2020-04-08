@@ -1,0 +1,19 @@
+{:paths ["src" "resources"]
+ :deps {org.clojure/clojure {:mvn/version "1.10.1"}
+        net.snowflake/snowflake-jdbc {:mvn/version "3.12.3"}
+        seancorfield/next.jdbc {:mvn/version "1.0.409"}
+        nrepl {:mvn/version "0.7.0"}
+        cprop {:mvn/version "0.1.16"}}
+
+ :aliases
+ {:test {:extra-paths ["test"]
+         :extra-deps {org.clojure/test.check {:mvn/version "0.10.0"}}}
+  :runner
+  {:extra-deps {com.cognitect/test-runner
+                {:git/url "https://github.com/cognitect-labs/test-runner"
+                 :sha "f7ef16dc3b8332b0d77bc0274578ad5270fbfedd"}}
+   :main-opts ["-m" "cognitect.test-runner"
+               "-d" "test"]}
+  :uberjar {:extra-deps {seancorfield/depstar {:mvn/version "0.5.2"}}
+            :main-opts ["-m" "hf.depstar.uberjar" "snowflake-jdbc-demo.jar"
+                        "-C" "-m" "khaferkamp.snowflake-jdbc-demo"]}}}

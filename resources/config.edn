@@ -1,0 +1,4 @@
+{:snowflake {:tenant
+             :user
+             :password
+             :connection-params}}

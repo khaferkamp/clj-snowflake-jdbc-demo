@@ -1,0 +1,4 @@
+snowflake.tenant=
+snowflake.user=
+snowflake.password=
+snowflake.connection-params=
